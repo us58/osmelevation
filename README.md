@@ -9,10 +9,10 @@
 Build and run the Docker image with
 ```
 $ docker build -t osmelevation -f Dockerfile .
-$ docker run -it -v input-data/:/OsmElevation/extern/ --name osmelevation osmelevation
+$ docker run -it -v <path to input data>/:/OsmElevation/extern/ --name osmelevation osmelevation
 ```
 
-where the "input-data" folder contains a folder with NASADEM files and OSM files where the elevation should be added to.
+where "path to input data" contains a folder with NASADEM files and OSM files where the elevation data should be added to.
 In the docker image, this data will be accessible in extern/
 
 ### Without Docker

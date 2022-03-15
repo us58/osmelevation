@@ -116,7 +116,6 @@ WORKDIR /OsmElevation/build
 RUN cmake ..
 RUN make  -j4
 WORKDIR /OsmElevation
-RUN chmod 777 /OsmElevation/eval/*.py 
 
 # Create a non-root user and switch to it
 RUN adduser --disabled-password --gecos '' --shell /bin/bash user \
