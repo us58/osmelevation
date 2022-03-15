@@ -127,7 +127,3 @@ USER user
 # All users can use /home/user as their home directory
 ENV HOME=/home/user
 RUN chmod 777 /home/user
-
-
-# docker build -t osmelevation -f Dockerfile .
-# docker run -it -v /local/data/spiegelu/extern/input/:/OsmElevation/extern/input/ -v /local/data/spiegelu/extern/output:/OsmElevation/extern/output/ --name osmelevation osmelevation
