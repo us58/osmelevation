@@ -84,16 +84,6 @@ RUN rm -rf v1.8.0.zip libzip-1.8.0
 RUN mkdir /OsmElevation
 WORKDIR /OsmElevation
 
-# Create a non-root user and switch to it
-RUN adduser --disabled-password --gecos '' --shell /bin/bash user \
- && chown -R user:user /OsmElevation
-RUN echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-user
-USER user
-
-# All users can use /home/user as their home directory
-ENV HOME=/home/user
-RUN chmod 777 /home/user
-
 COPY . .
 RUN mkdir build
 WORKDIR /OsmElevation/build
