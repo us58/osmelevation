@@ -12,9 +12,9 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     make \
     cmake \
-		wget \
-		zip \
-		sudo \
+    wget \
+    zip \
+    sudo \
     libboost-all-dev \
     libbz2-dev \
  && rm -rf /var/lib/apt/lists/*
@@ -27,7 +27,7 @@ WORKDIR  /tmp/libexpat-R_2_4_1/expat
 RUN mkdir build
 WORKDIR /tmp/libexpat-R_2_4_1/expat/build
 RUN cmake ..
-RUN sudo make install -j
+RUN sudo make install -j4
 WORKDIR /tmp
 RUN rm -rf R_2_4_1.zip libexpat-R_2_4_1
 
@@ -39,7 +39,7 @@ WORKDIR  /tmp/protozero-1.7.0
 RUN mkdir build
 WORKDIR /tmp/protozero-1.7.0/build
 RUN cmake ..
-RUN sudo make install -j
+RUN sudo make install -j4
 WORKDIR /tmp
 RUN rm -rf v1.7.0.zip protozero-1.7.0
 
@@ -51,7 +51,7 @@ WORKDIR  /tmp/zlib-1.2.11
 RUN mkdir build
 WORKDIR /tmp/zlib-1.2.11/build
 RUN cmake ..
-RUN sudo make install -j
+RUN sudo make install -j4
 WORKDIR /tmp
 RUN rm -rf zlib-1.2.11.tar.gz zlib-1.2.11
 
@@ -63,7 +63,7 @@ WORKDIR  /tmp/libosmium-2.17.1
 RUN mkdir build
 WORKDIR /tmp/libosmium-2.17.1/build
 RUN cmake ..
-RUN sudo make install -j
+RUN sudo make install -j4
 WORKDIR /tmp
 RUN rm -rf v2.17.1.zip libosmium-2.17.1
 
@@ -76,7 +76,7 @@ RUN mkdir build
 WORKDIR /tmp/libzip-1.8.0/build
 RUN cmake .. -DENABLE_COMMONCRYPTO=OFF -DENABLE_GNUTLS=OFF -DENABLE_MBEDTLS=OFF -DENABLE_OPENSSL=OFF
 RUN sudo make
-RUN make install -j
+RUN make install -j4
 WORKDIR /tmp
 RUN rm -rf v1.8.0.zip libzip-1.8.0
 
@@ -98,5 +98,5 @@ COPY . .
 RUN mkdir build
 WORKDIR /OsmElevation/build
 RUN cmake ..
-RUN make  -j
+RUN make -j4
 WORKDIR /OsmElevation
