@@ -27,18 +27,7 @@ $ docker build -t osmelevation -f Dockerfile .
 $ docker run -it -v <path to input data>/:/OsmElevation/extern/ --name osmelevation osmelevation
 ```
 
-where "path to input data" contains a folder with NASADEM files and OSM files where the elevation data should be added to.
-In the docker image, this data will be accessible in extern/
-
-### Without Docker
-
-On Ubuntu 20.04 the following libraries and packages are required to build `osmelevation` and `correctosmelevation`:
-```
-g++ libboost-all-dev libbz2-dev cmake make
-```
-+ [Libosmium](https://osmcode.org/libosmium/)
-	+ [Expat](https://github.com/libexpat/libexpat)
-	+ [protozero](https://github.com/mapbox/protozero)
+where "path to input data" contains a folder with NASADEM files and OSM files where the elevation data should be added to.800782659
 	+ [zlib](https://www.zlib.net/)
 + [libzip](https://libzip.org/)
 
@@ -65,9 +54,10 @@ Assess `./build/osmelevation` and `./build/correctosmelevation` for further opti
 
 ## Important remark
 
-For the second tool `correctosmelevation`, complete OSM relations with tag type=route and waterway=river must be present.
+For the second tool `correctosmelevation`, complete OSM relations with tag _type=route_ and _waterway=river_ must be present.
 Otherwise, no corrections will be performed on these (incomplete) relations.
-When creating geographic extracts with tools like osmium, options must be chosen to not clip relations with these tags at the borders of the extracts. 
+When creating geographic extracts with tools like osmium, options must be chosen to not clip relations with these tags at the borders of the extracts.
+To include complete relations with tag _type=route_, call osmium with `-s smart -S types=route`. To also include relations with tag _waterway=river_, osmium must be called with `-s smart -S types=any` as there is no option specifically for this tag.
 
 ## Obtaining NASADEM files
 
