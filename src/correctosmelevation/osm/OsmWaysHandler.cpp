@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <cstdint>
-#include <iostream>
 #include <osmium/osm/way.hpp>
 #include "correctosmelevation/correct/SmoothRoute.h"
 #include "correctosmelevation/osm/OsmWaysHandler.h"

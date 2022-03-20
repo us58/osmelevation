@@ -2,7 +2,6 @@
 // Author: Urs Spiegelhalter <urs.sp99@gmail.com>.
 
 #include <math.h>
-#include <iostream>
 #include "osmelevation/elevation/NasademFile.h"
 #include "util/geo/Point.h"
 #include "util/geo/Geo.h"

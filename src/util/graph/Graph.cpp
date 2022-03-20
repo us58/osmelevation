@@ -1,7 +1,6 @@
 // Copyright 2022, Urs Spiegelhalter
 // Author: Urs Spiegelhalter <urs.sp99@gmail.com>.
 
-#include <iostream>
 #include <vector>
 #include <utility>
 #include <set>

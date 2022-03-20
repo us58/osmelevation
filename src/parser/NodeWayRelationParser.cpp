@@ -2,7 +2,6 @@
 // Author: Urs Spiegelhalter <urs.sp99@gmail.com>.
 
 #include <string>
-#include <iostream>
 #include <osmium/util/progress_bar.hpp>
 #include <osmium/visitor.hpp>
 #include <osmium/io/any_input.hpp>

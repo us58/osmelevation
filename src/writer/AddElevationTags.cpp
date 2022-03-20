@@ -1,7 +1,6 @@
 // Copyright 2022, Urs Spiegelhalter
 // Author: Urs Spiegelhalter <urs.sp99@gmail.com>.
 
-#include <iostream>
 #include <string>
 #include <osmium/memory/buffer.hpp>
 #include <osmium/osm/node.hpp>

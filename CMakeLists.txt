@@ -30,7 +30,6 @@ set(CPPLINT_PROJECT_ROOT "src")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 set(DIRECTORY_WITH_TEST_DATA "${CMAKE_SOURCE_DIR}/test/test_files/")
 
-#add_compile_options(-Wall)
 add_compile_options(-Ofast -Wall -Wno-format-extra-args -Wextra -Wformat-nonliteral -Wformat-security -Wformat=2 -Wextra -Wno-implicit-fallthrough -pedantic)
 add_compile_options(-march=native -flto)
 

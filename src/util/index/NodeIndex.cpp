@@ -5,7 +5,6 @@
 #include <ctime>
 #include <utility>
 #include <algorithm>
-#include <iostream>
 #include <cstdint>
 #include <vector>
 #include "util/osm/Node.h"

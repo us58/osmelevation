@@ -4,7 +4,6 @@
 #include <math.h>
 #include <ctime>
 #include <algorithm>
-#include <iostream>
 #include "global/Constants.h"
 #include "util/index/IdElevationAverage.h"
 #include "util/index/ElevationIndex.h"

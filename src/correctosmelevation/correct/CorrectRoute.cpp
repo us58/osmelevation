@@ -1,7 +1,6 @@
 // Copyright 2022, Urs Spiegelhalter
 // Author: Urs Spiegelhalter <urs.sp99@gmail.com>.
 
-#include <iostream>
 #include <vector>
 #include "global/Constants.h"
 #include "util/geo/Point.h"
@@ -74,12 +73,10 @@ void CorrectRoute::buildCoordsAndElevations() {
     for (size_t nodeId = 0; nodeId < _nodeCounts[subroute]; ++nodeId) {
       const Node& node = _nodeIndex.getNode(_nodeIds[subroute][nodeId]);
       _nodeCoords[subroute].emplace_back(node.lon, node.lat);
-      // std::cout << node.lon << ", " << node.lat << std::endl;
       _elevations[subroute].emplace_back(node.elevation);
       if (node.elevation == INVALID_ELEV) {
         _allDataAvailable[subroute] = false;
       }
     }
   }
-  // std::cout << "\n\n";
 }
