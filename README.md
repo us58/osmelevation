@@ -1,6 +1,21 @@
 # osmelevation
 `osmelevation` annotates OpenStreetMap data with external elevation data from the NASA Digital Elevation Model (NASADEM).
+
 `correctosmelevation` performs corrections on the elevation data in OpenStreetMap data.
+
+## Adding elevation data to OpenStreetMap
+The tool `osmelevation` adds the tag _ele=*_ to each node in OSM. This tag contains the elevation above sea level in meters of the node's location. If a node already has a _ele=*_ tag, nothing gets changed.
+
+## Correcting elevation data in OpenStreetMap
+The tool `correctosmelevation` performs corrections on elevation data along routes in OSM. This includes the following OSM objects:
++ (1) Relations with tag _type=route_
++ (2) Relations with tag _waterway=river_
++ (3) Ways with tag _highway=*_
+
+The following corrections are performed:
++ Apply a smoothing algorithm to the elevation along routes found in (1) and (3)
++ For tunnels/bridges found in (1), straighten the elevation of the tunnels/bridges
++ Make sure that rivers do not flow uphill (2)
 
 ## Getting started
 
@@ -56,6 +71,7 @@ When creating geographic extracts with tools like osmium, options must be chosen
 
 ## Obtaining NASADEM files
 
+NASADEM elevation data are derived from the original SRTM data. For more information, visit [the official website](https://lpdaac.usgs.gov/products/nasadem_hgtv001/).
 All available NASADEM files are downloadable from the [LP DAAC Data Pool](https://e4ftl01.cr.usgs.gov/MEASURES/NASADEM_HGT.001/2000.02.11/).
 A free Earthdata account is required. For bulk downloads, follow the [official instructions](https://disc.gsfc.nasa.gov/data-access) provided by NASA.
 A txt file containing all NASADEM files urls is provided with `nasadem_urls.txt`.
