@@ -27,7 +27,18 @@ $ docker build -t osmelevation -f Dockerfile .
 $ docker run -it -v <path to input data>/:/OsmElevation/extern/ --name osmelevation osmelevation
 ```
 
-where "path to input data" contains a folder with NASADEM files and OSM files where the elevation data should be added to.800782659
+where "path to input data" contains a folder with NASADEM files and OSM files where the elevation data should be added to.
+In the docker image, this data will be accessible in extern/
+
+### Without Docker
+
+On Ubuntu 20.04 the following libraries and packages are required to build `osmelevation` and `correctosmelevation`:
+```
+g++ libboost-all-dev libbz2-dev cmake make
+```
++ [Libosmium](https://osmcode.org/libosmium/)
+	+ [Expat](https://github.com/libexpat/libexpat)
+	+ [protozero](https://github.com/mapbox/protozero)
 	+ [zlib](https://www.zlib.net/)
 + [libzip](https://libzip.org/)
 
